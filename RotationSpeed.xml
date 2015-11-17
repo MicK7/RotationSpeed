@@ -1,0 +1,54 @@
+<ServerManagerConfiguration>
+<!-- This is the server manager configuration XML. It defines the interface to
+our new filter. As a rule of thumb, try to locate the configuration for
+a filter already in ParaView (in Servers/ServerManager/Resources/*.xml)
+that matches your filter and then model your xml on it -->
+    <ProxyGroup name="filters">
+        <SourceProxy name="RotationSpeed" class="vtkRotationSpeed" label="RotationSpeed">
+            <Documentation
+            long_help="Apply a rotation speed to the input"
+            short_help="Apply a rotation speed to the input">
+            Apply a rotation speed to the input
+            </Documentation>
+
+            <InputProperty
+            name="Input"
+            port_index="0"
+            command="SetInputConnection">
+
+                <ProxyGroupDomain name="groups">
+                    <Group name="sources"/>
+                    <Group name="filters"/>
+                </ProxyGroupDomain>
+                <DataTypeDomain name="input_type">
+                    <DataType value="vtkPointSet"/>
+                </DataTypeDomain>
+
+            </InputProperty>
+
+            <DoubleVectorProperty
+                name="Omega"
+                label="Omega"
+                command="SetOmega"
+                number_of_elements="1"
+                default_values="0">
+            </DoubleVectorProperty>
+            <DoubleVectorProperty
+                name="Theta0"
+                label="Theta0"
+                command="SetTheta0"
+                number_of_elements="1"
+                default_values="0">
+            </DoubleVectorProperty>
+            <DoubleVectorProperty
+                name="T0"
+                label="T0"
+                command="SetT0"
+                number_of_elements="1"
+                default_values="0">
+            </DoubleVectorProperty>
+
+        </SourceProxy>
+    </ProxyGroup>
+</ServerManagerConfiguration>
+
