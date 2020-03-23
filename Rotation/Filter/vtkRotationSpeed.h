@@ -12,7 +12,6 @@
      PURPOSE.  See the above copyright notice for more information.
 
   =========================================================================*/
-// Copyright 2014-2016 Etienne Tang
 
 /**
  * @class   vtkRotationSpeed

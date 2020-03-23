@@ -1,0 +1,8 @@
+NAME
+  RotationSpeed
+DESCRIPTION
+  Plugin to impose a constant rotation speed
+REQUIRES_MODULES
+  VTK::CommonCore
+  VTK::CommonDataModel
+  VTK::CommonExecutionModel
